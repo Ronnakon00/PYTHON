@@ -1,0 +1,10 @@
+import numpy as np
+a = np.arange(1,5)
+print(a)
+print(a+2)
+print(a*2)
+print(a**2)
+b = np.array([2,4,5,7])
+print(a.shape)
+print(b.shape)
+print(a+b)

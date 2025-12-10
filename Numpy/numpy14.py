@@ -1,0 +1,11 @@
+import numpy as np
+a = np.arange(10)
+print(a)
+b = np.arange(10.0)
+print(b)
+c = np.arange(3,10)
+print(c)
+d = np.arange(4,10,dtype="float")
+print(d)
+e = np.arange(1,14,3)
+print(e)
