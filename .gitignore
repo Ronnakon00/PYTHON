@@ -1,2 +1,5 @@
 .vscode/
-.gitignore
+.DS_Storeเ
+__pycache__/
+*.pyc
+.env
