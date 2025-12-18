@@ -1,0 +1,24 @@
+import cv2
+
+cap = cv2.VideoCapture('Opencv/image/Mark.mp4')
+face_cascade = cv2.CascadeClassifier('Opencv/detect/haarcascade_frontalface_default.xml')
+eye_cascade = cv2.CascadeClassifier('Opencv/detect/haarcascade_eye_tree_eyeglasses.xml')
+
+while(cap.isOpened):
+    ref , fream = cap.read()
+    if(ref == True):
+        gray_fream = cv2.cvtColor(fream,cv2.COLOR_BGR2GRAY)
+        face_detect = face_cascade.detectMultiScale(gray_fream,1.3,4)
+        eye_detect = eye_cascade.detectMultiScale(gray_fream,1.3,4)
+        for (x,y,w,h) in face_detect:
+            cv2.rectangle(fream,(x,y),(x+w,y+h),(0,255,0),5)
+            for (ex,ey,ew,eh) in eye_detect:
+                cv2.rectangle(fream,(ex,ey),(ex+ew,ey+eh),(0,0,255),5)
+        cv2.imshow('result',fream)
+        if(cv2.waitKey(1) == ord('e')):
+            break
+    else : 
+        break
+
+cap.release()
+cv2.destroyAllWindows()
