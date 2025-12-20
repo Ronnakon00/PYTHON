@@ -3,7 +3,7 @@ import cv2
 img = cv2.imread('Opencv/image/ant.jpg',0)
 
 def display(value):
-    pass 
+    print(value) 
 
 cv2.namedWindow('output')
 cv2.createTrackbar('value','output',128,255,display)
